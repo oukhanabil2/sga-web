@@ -5,181 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SGA Web - Gestion des Agents</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             background: white;
-            border-radius: 20px;
             padding: 30px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
         header {
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 2px solid #f0f0f0;
+            border-bottom: 2px solid #007bff;
         }
         h1 {
             color: #333;
-            font-size: 2.5em;
             margin-bottom: 10px;
         }
-        .subtitle {
-            color: #666;
-            font-size: 1.2em;
+        .status {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin: 30px 0;
         }
         .card {
             background: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #e0e0e0;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .card h3 {
-            color: #333;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
         }
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #007bff;
             color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
+            padding: 10px 20px;
+            border-radius: 5px;
             text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            width: 100%;
+            margin-top: 10px;
         }
         .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            background: #0056b3;
         }
-        .status {
-            background: #e8f5e9;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-        }
-        .icon { font-size: 1.5em; }
         footer {
             text-align: center;
             margin-top: 40px;
-            color: #777;
+            color: #666;
             font-size: 0.9em;
-        }
-        @media (max-width: 768px) {
-            .container { padding: 20px; }
-            h1 { font-size: 2em; }
-            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🚀 SGA Web - Système de Gestion des Agents</h1>
-            <p class="subtitle">Application web complète de gestion des plannings d'agents de sécurité</p>
+            <h1>🚀 SGA Web - Gestion des Agents</h1>
+            <p>Application web pour la gestion des plannings d'agents</p>
         </header>
 
         <div class="status">
-            <h3>📡 Statut de l'API : <span style="color: #4CAF50;">● En ligne</span></h3>
-            <p>Application déployée et fonctionnelle</p>
+            <h3>✅ Application déployée avec succès sur Railway</h3>
+            <p>Tous les systèmes sont opérationnels</p>
         </div>
 
         <div class="grid">
             <div class="card">
-                <h3><span class="icon">📚</span> Documentation API</h3>
-                <p>Documentation interactive Swagger UI pour tester tous les endpoints</p>
+                <h3>📚 Documentation API</h3>
+                <p>Documentation interactive Swagger UI</p>
                 <a href="/docs" class="btn" target="_blank">Ouvrir Swagger</a>
             </div>
 
             <div class="card">
-                <h3><span class="icon">📈</span> Tableau de bord</h3>
-                <p>Statistiques en temps réel, présence, congés</p>
+                <h3>📊 Tableau de bord</h3>
+                <p>Statistiques en temps réel</p>
                 <a href="/api/dashboard" class="btn" target="_blank">Voir Dashboard</a>
             </div>
 
             <div class="card">
-                <h3><span class="icon">👥</span> Gestion Agents</h3>
-                <p>Liste des agents, groupes, états</p>
+                <h3>👥 Gestion Agents</h3>
+                <p>Liste et gestion des agents</p>
                 <a href="/api/agents" class="btn" target="_blank">Voir Agents</a>
             </div>
 
             <div class="card">
-                <h3><span class="icon">📅</span> Planning Global</h3>
-                <p>Planning complet du mois en cours</p>
-                <a href="/api/planning/global/12/2025" class="btn" target="_blank">Voir Planning</a>
-            </div>
-
-            <div class="card">
-                <h3><span class="icon">📊</span> Statistiques</h3>
-                <p>Stats par agent et globales</p>
-                <a href="/api/stats/global/12/2025" class="btn" target="_blank">Voir Stats</a>
-            </div>
-
-            <div class="card">
-                <h3><span class="icon">🔧</span> Administration</h3>
-                <p>Import/Export, configurations</p>
-                <a href="/api/config" class="btn" target="_blank">Configuration</a>
+                <h3>🔧 Configuration</h3>
+                <p>Informations système</p>
+                <a href="/api/config" class="btn" target="_blank">Voir Config</a>
             </div>
         </div>
 
         <div class="card" style="margin-top: 20px;">
-            <h3><span class="icon">⚡</span> Accès rapide</h3>
-            <p>
-                <a href="/redoc" style="color: #667eea;">Documentation Redoc</a> | 
-                <a href="/api/health" style="color: #667eea;">Vérification santé</a> | 
-                <a href="/api/search?q=test" style="color: #667eea;">Recherche</a>
-            </p>
+            <h3>📡 Endpoints disponibles</h3>
+            <ul style="text-align: left; list-style: none; padding: 0;">
+                <li><code>GET /api/health</code> - Santé de l'API</li>
+                <li><code>GET /api/agents</code> - Liste des agents</li>
+                <li><code>POST /api/agents</code> - Ajouter un agent</li>
+                <li><code>GET /api/dashboard</code> - Tableau de bord</li>
+                <li><code>POST /api/import/csv</code> - Importer CSV</li>
+            </ul>
         </div>
 
         <footer>
-            <p>© 2025 SGA Web - Version 2.0.0 | Déployé avec ❤️ depuis mobile</p>
-            <p style="font-size: 0.8em; margin-top: 10px;">
-                <strong>URL API :</strong> <code id="api-url">Chargement...</code>
-            </p>
+            <p>SGA Web v2.0.0 | Déployé sur Railway</p>
+            <p>© 2025 - Gestion des plannings d'agents</p>
         </footer>
     </div>
-
-    <script>
-        // Afficher l'URL actuelle
-        document.getElementById('api-url').textContent = window.location.origin;
-        
-        // Ajouter la date actuelle
-        const now = new Date();
-        const options = { 
-            weekday: 'long', 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-        };
-        document.querySelector('footer').innerHTML += 
-            `<p style="margin-top: 5px;">${now.toLocaleDateString('fr-FR', options)}</p>`;
-    </script>
 </body>
 </html>
